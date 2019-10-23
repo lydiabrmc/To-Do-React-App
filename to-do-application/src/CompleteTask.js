@@ -6,12 +6,7 @@ class CompleteTask extends React.Component {
       return (
         <div className="row">
           <div className="col-2">
-            <p className={this.props.bought && "bought"}>{this.props.text}</p>
-          </div>
-          <div className="col-1">
-            <p>
-              {this.props.quantity}
-            </p>
+            <p className={this.props.complete && "complete"}>{this.props.text}</p>
           </div>
         </div>
       );
