@@ -5,7 +5,6 @@ class Header extends React.Component {
         return (
             <div>
             <h1>To Do List</h1>
-            <h3>You have ... tasks remaining</h3>
             </div>
         )
     }
