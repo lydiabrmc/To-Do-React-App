@@ -4,6 +4,8 @@ import Header from "./Header"
 import "./App.css";
 import AddTask from "./AddTask"
 import TaskCount from "./TaskCount";
+import TaskList from "./TaskList"
+import SubHeader from "./SubHeader"
 
 
 class App extends React.Component {
@@ -13,6 +15,10 @@ class App extends React.Component {
         <Header />
         <AddTask />
         <TaskCount count={3}/>
+        <TaskList />
+        <TaskList />
+        <TaskList />
+        <SubHeader />
       </div>
     );
   }
