@@ -2,11 +2,12 @@
 import React, { Component } from "react";
 import uuid from "uuid/v4";
 import Header from "./Header1"
-import "./App.css";
 import AddTask from "./AddTask"
 import TaskCount from "./TaskCount";
-import Item from "./TaskList"
+import TaskList from "./TaskList"
+import CompleteTask from "./CompleteTask";
 import SubHeader from "./SubHeader"
+import "./App.css";
 
 
 class App extends Component {
@@ -48,11 +49,11 @@ class App extends Component {
         <AddTask addNewTaskFunc={this.addNewTask}/>
         <TaskCount count={this.state.tasks.length}/>
         {incompleteTasks.map(task => {
-          return <Item text={task.text} completed={task.completed} key={task.id}/>
+          return <TaskList text={task.text} completed={task.completed} key={task.id}/>
         })}
         <SubHeader title="Completed Tasks"/>
         {completedTasks.map(task => {
-          return <Item text={task.text} completed={task.completed} key={task.id}/>
+          return <CompleteTask text={task.text} completed={task.completed} key={task.id}/>
         })}
       </div>
     );

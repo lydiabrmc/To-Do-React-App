@@ -10,7 +10,7 @@ class Item extends React.Component {
           </div>
           <div className="col-6 col-md-4">
             <button className="btn btn-info" disabled={this.props.complete}>
-              Add
+              Complete
             </button>
             <button className="float-right btn btn-danger">Delete</button>
           </div>
