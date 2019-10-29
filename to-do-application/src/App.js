@@ -37,10 +37,13 @@ class App extends Component {
 
 
   render() {
-    const completedTasks = this.state.tasks.filter(tasks =>{
+    const sortedTasks = this.state.tasks.sort((a,b) => {
+      return b.date - a.date;
+    })
+    const completedTasks = sortedTasks.filter(tasks =>{
       return tasks.completed;
     });
-    const incompleteTasks = this.state.tasks.filter(tasks =>{
+    const incompleteTasks = sortedTasks.filter(tasks =>{
       return tasks.completed ? false : true;
     });
     return (
