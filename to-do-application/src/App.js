@@ -46,11 +46,14 @@ class App extends Component {
     const incompleteTasks = sortedTasks.filter(tasks =>{
       return tasks.completed ? false : true;
     });
+    const taskCount = this.state.tasks.reduce((prev, task) =>{
+      return (!task.completed) ? prev + 1 : prev;
+    }, 0)
     return (
       <div className="container">
         <Header />
         <AddTask addNewTaskFunc={this.addNewTask}/>
-        <TaskCount count={this.state.tasks.length}/>
+        <TaskCount count={taskCount}/>
         {incompleteTasks.map(task => {
           return <TaskList text={task.text} completed={task.completed} key={task.id} date={task.date}/>
         })}
