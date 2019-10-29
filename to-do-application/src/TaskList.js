@@ -5,7 +5,7 @@ class Item extends React.Component {
     render() {
       return (
         <div className="row">
-          <div className="col-6 col-md-8">
+          <div className="col-6 col-md-6">
             <p className={this.props.complete && "complete"}>{this.props.text}</p>
           </div>
           <div className="col-6 col-md-4">
