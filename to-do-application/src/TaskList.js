@@ -3,6 +3,7 @@ import "./App.css"
 
 class Item extends React.Component {
     render() {
+      console.log(this.props.date)
       return (
         <div className="row">
           <div className="col-6 col-md-6">
