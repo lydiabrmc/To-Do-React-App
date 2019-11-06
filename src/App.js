@@ -48,7 +48,17 @@ class App extends Component {
     this.setState({
       tasks: updatedTasks
     });
+  };
+
+  deleteTask = id => {
+    const filteredTasks = this.state.tasks.filter(task => {
+      return task.id !== id
+    });
+    this.setState({
+      tasks: filteredTasks
+    });
   }
+
 
   render() {
     const completedTasks = this.state.tasks.filter(tasks => {
