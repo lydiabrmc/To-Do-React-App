@@ -70,6 +70,11 @@ button.btn-danger:hover {
     margin-bottom: 1%;
 }
 
+.table th, 
+.table td {
+    border-color: lightgray;
+}
+
 .CompleteTask {
     color: #05668D;
 }
