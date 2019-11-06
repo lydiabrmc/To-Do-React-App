@@ -1,9 +1,9 @@
 import React from "react"
 
 class TaskCount extends React.Component {
-    render(){
+    render() {
         return (
-            <h3>You have {this.props.count} tasks left to complete</h3>
+            <h3>You have <strong>{this.props.count}</strong> tasks left to complete</h3>
         )
     }
 }

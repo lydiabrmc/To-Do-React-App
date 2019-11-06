@@ -34,7 +34,7 @@ class AddTask extends React.Component {
                 <div className="form-group mx-sm-3 mb-2">
                     <input
                         type="text"
-                        className="form-control"
+                        className="form-control task-input"
                         id="newItem"
                         placeholder="Add your task here"
                         value={this.state.newItemText}

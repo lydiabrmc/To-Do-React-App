@@ -4,58 +4,84 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: #EDB8C2;
+    background-color: #F0F3BD;
     text-transform: capitalize;
+    text-align: center;
+
 }
 
 h1 {
-    text-align: left;
-    color: #9C96B2;
+    color: #05668D;
     font-weight: bold;
+    text-decoration: underline;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 h2 {
-    color: #D6D6DC;
+    color: #05668D;
+    text-decoration: underline;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 h3 {
-    color: #B79FAD;
+    color: #05668D;
+    text-decoration: underline;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 button {
-    color: #BED8DB;
+    color: #028090;
 }
 
 button.btn-primary,
 button.btn-primary:disabled {
-    background: #F7AF9D;
-    border-color: #F7AF9D;
+    background: #028090;
+    border-color: #028090;
 }
 
 button.btn-primary:focus,
 button.btn-primary:active,
 button.btn-primary:hover {
-    background: #9C96B2;
-    border-color: #9C96B2;
+    background: #028090;
+    border-color: #028090;
 }
 
 button.btn-info {
-    background-color: #BED8DB;
-    border-color: #BED8DB;
+    background-color: #00A896;
+    border-color: #00A896;
 }
 
 button.btn-danger {
-    background-color: #D6D6DC;
-    border-color: #D6D6DC;
+    background-color: #02C39A;
+    border-color: #02C39A;
 }
 
 button.btn-danger:hover {
-    background-color: #F7AF9D;
-    border-color: #F7AF9D;
+    background-color: #F0F3BD;
+    border-color: #F0F3BD;
 }
 
 .table {
-    color: #9C96B2;
+    color: #05668D;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 
+.CompleteTask {
+    color: #05668D;
+}
 
+.row {
+    color: #05668D;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.form-inline {
+    justify-content: center;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
