@@ -81,8 +81,7 @@ button.btn-danger:hover {
 
 .row {
     color: #05668D;
-    margin-top: 1%;
-    margin-bottom: 1%;
+    text-align: left;
 }
 
 .form-inline {
