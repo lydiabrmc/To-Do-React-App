@@ -4,7 +4,7 @@ import moment from "moment"
 class AddTask extends React.Component {
     state = {
         newItemText: "",
-        dateSelected: moment().format("ddd Do MMM")
+        dateSelected: moment().format("YYYY-MM-DD")
     };
 
     updateNewItemText = (event) => {
@@ -16,7 +16,8 @@ class AddTask extends React.Component {
 
     handleClick = (event) => {
         event.preventDefault();
-        this.props.addNewTaskFunc(this.state.newItemText);
+
+        this.props.addNewTaskFunc(this.state.newItemText, this.state.dateSelected);
         this.setState({
             newItemText: ""
         });

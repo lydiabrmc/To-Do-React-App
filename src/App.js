@@ -23,16 +23,18 @@ class App extends Component {
   };
 
   addNewTask = (taskText, dueByDate) => {
+    console.log(taskText, dueByDate, 'add task');
     const tasksCopy = this.state.tasks.slice();
     const newTask = {
       text: taskText,
       completed: false,
-      date: moment().format("ddd Do MMM"),
+      date: moment().format("YYYY-MM-DD"),
       id: uuid(),
       dueBy: dueByDate,
     };
     tasksCopy.push(newTask)
     this.setState({
+      tasks: tasksCopy
     })
   };
 
