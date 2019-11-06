@@ -72,7 +72,7 @@ button.btn-danger:hover {
 
 .table th, 
 .table td {
-    border-color: lightgray;
+    border-color: rgba(5,102,141, 0.2);
 }
 
 .CompleteTask {
