@@ -16,7 +16,6 @@ class AddTask extends React.Component {
 
     handleClick = (event) => {
         event.preventDefault();
-
         this.props.addNewTaskFunc(this.state.newItemText, this.state.dateSelected);
         this.setState({
             newItemText: ""
@@ -30,7 +29,6 @@ class AddTask extends React.Component {
         });
     }
     render() {
-        //JSX
         return (
             <form className="form-inline">
                 <div className="form-group mx-sm-3 mb-2">
@@ -44,7 +42,9 @@ class AddTask extends React.Component {
                     ></input>
                 </div>
                 <div className="form-group mx-sm-3 mb-2">
-                    <input type='date' onChange={this.handleDateChange} value={this.state.dateSelected} /></div>
+                    <input type='date'
+                        onChange={this.handleDateChange}
+                        value={this.state.dateSelected} /></div>
                 <button
                     className="btn btn-primary mb-2"
                     onClick={this.handleClick}

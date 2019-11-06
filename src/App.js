@@ -10,7 +10,6 @@ import CompleteTask from "./CompleteTask";
 import SubHeader from "./SubHeader"
 import "./App.css";
 
-
 class App extends Component {
   state = {
     tasks: [
@@ -59,7 +58,6 @@ class App extends Component {
     });
   }
 
-
   render() {
     const completedTasks = this.state.tasks.filter(tasks => {
       return tasks.completed;
@@ -72,17 +70,26 @@ class App extends Component {
         <Header />
         <AddTask addNewTaskFunc={this.addNewTask} />
         <TaskCount count={incompleteTasks.length} />
-        {incompleteTasks.map(task => {
-          return <TaskList
-            text={task.text}
-            completed={task.completed}
-            key={task.id}
-            deleteTaskFunc={this.deleteTask}
-            id={task.id}
-            completeTaskFunc={this.completeTask}
-            date={task.date}
-            dueBy={task.dueBy} />
-        })}
+        <table className="table">
+          <tr>
+            <th>Task</th>
+            <th>Created</th>
+            <th>Due by</th>
+            <th></th>
+            <th></th>
+          </tr>
+          {incompleteTasks.map(task => {
+            return <TaskList
+              text={task.text}
+              completed={task.completed}
+              key={task.id}
+              deleteTaskFunc={this.deleteTask}
+              id={task.id}
+              completeTaskFunc={this.completeTask}
+              date={task.date}
+              dueBy={task.dueBy} />
+          })}
+        </table>
         <SubHeader title="Completed Tasks" />
         {completedTasks.map(task => {
           return <CompleteTask

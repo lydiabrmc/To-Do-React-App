@@ -11,29 +11,46 @@ class Item extends React.Component {
   }
   render() {
     return (
-      <div className="row">
-        <div className="col-2">
-          <p className={this.props.complete ? "complete" : ""}>{
-            this.props.text}
-          </p>
-        </div>
-        <div className="col-2">
-          <p>{moment(this.props.date, "YYYY-MM-DD").format("ddd Do MMM")}</p>
-        </div>
-        <div className="col-3">
-          <p> Due by: {moment(this.props.dueBy, "YYYY-MM-DD").format("ddd Do MMM")}</p>
-        </div>
-        <div className="col-1">
-          {!this.props.completed && (
-            <button className="btn btn-info" onClick={this.handleComplete}>
-              Complete
+
+      <tr>
+        <td>{this.props.text}</td>
+        <td>{moment(this.props.date, "YYYY-MM-DD").format("ddd Do MMM")}</td>
+        <td>{moment(this.props.dueBy, "YYYY-MM-DD").format("ddd Do MMM")}</td>
+        <td>{!this.props.completed && (
+          <button className="btn btn-info"
+            onClick={this.handleComplete}>
+            Complete
             </button>
-          )}
-        </div>
-        <div className="col-1">
-          <button className="btn btn-danger" onClick={this.handleDelete}>Delete</button>
-        </div>
-      </div>
+        )}</td>
+        <td><button className="btn btn-danger"
+          onClick={this.handleDelete}>Delete</button></td>
+      </tr>
+
+      // <div className="row">
+      //   <div className="col-2">
+      //     <p className={this.props.complete ? "complete" : ""}>
+      //       {this.props.text}
+      //     </p>
+      //   </div>
+      //   <div className="col-2">
+      //     <p>{moment(this.props.date, "YYYY-MM-DD").format("ddd Do MMM")}</p>
+      //   </div>
+      //   <div className="col-3">
+      //     <p> Due by: {moment(this.props.dueBy, "YYYY-MM-DD").format("ddd Do MMM")}</p>
+      //   </div>
+      //   <div className="col-2">
+      //     {!this.props.completed && (
+      //       <button className="btn btn-info"
+      //         onClick={this.handleComplete}>
+      //         Complete
+      //       </button>
+      //     )}
+      //   </div>
+      //   <div className="col-2">
+      //     <button className="btn btn-danger"
+      //       onClick={this.handleDelete}>Delete</button>
+      //   </div>
+      // </div>
     );
   }
 }
