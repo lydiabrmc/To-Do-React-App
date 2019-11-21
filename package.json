@@ -9,7 +9,7 @@
     "react-datetime": "^2.16.3",
     "react-dom": "^16.10.2",
     "react-scripts": "3.2.0",
-    "uuid": "^3.3.3",
+    "uuid": "^3.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
