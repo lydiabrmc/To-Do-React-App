@@ -10,7 +10,7 @@
     "react-dom": "^16.10.2",
     "react-scripts": "3.2.0",
     "uuid": "^3.3.3",
-    "homepage": "https://lydiabrmc.github.io/To-Do-React-App/",
+    "homepage": "https://lydiabrmc.github.io/To-Do-React-App/"
   },
   "scripts": {
     "start": "react-scripts start",
