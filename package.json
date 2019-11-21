@@ -2,6 +2,7 @@
   "name": "to-do-application",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://lydiabrmc.github.io/To-Do-React-App/",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "moment": "^2.24.0",
@@ -10,7 +11,6 @@
     "react-dom": "^16.10.2",
     "react-scripts": "3.2.0",
     "uuid": "^3.3.3",
-    "homepage": "https://lydiabrmc.github.io/To-Do-React-App/"
   },
   "scripts": {
     "start": "react-scripts start",
