@@ -2,7 +2,6 @@
   "name": "to-do-application",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://lydiabrmc.github.io/To-Do-React-App/",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "moment": "^2.24.0",
