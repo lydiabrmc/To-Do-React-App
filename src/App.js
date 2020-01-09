@@ -13,11 +13,23 @@ import "./App.css";
 
 class App extends Component {
   state = {
-    tasks: []
-    // { text: "do the dishes", completed: true, date: "2019-10-20", id: uuid(), dueBy: "2019-11-10" },
+    tasks: [
+      {
+        taskId: uuid(),
+        taskText: "",
+        completed: true,
+        dateDue: "",
+        id: uuid(),
+        dateCreated: moment().format("YYYY-MM-DD")
+      },
+    ]
   };
 
   componentDidMount() {
+    this.fetchTasks();
+  }
+
+  fetchTasks() {
     axios.get("https://y65zlhzmkj.execute-api.eu-west-1.amazonaws.com/dev/tasks")
       .then((response) => {
         const tasks = response.data;
@@ -34,12 +46,14 @@ class App extends Component {
     console.log(taskText, dueByDate, 'add task');
     const tasksCopy = this.state.tasks.slice();
     const newTask = {
-      text: taskText,
+      taskText: taskText,
+      taskId: uuid(),
+      id: uuid(),
       completed: false,
       dateCreated: moment().format("YYYY-MM-DD"),
       dateDue: dueByDate
-      //userId: 1 - can add this in if add the functionality of user logins. 
     };
+
     axios.post("https://y65zlhzmkj.execute-api.eu-west-1.amazonaws.com/dev/tasks", newTask)
       .then((response) => {
         const taskFromDB = response.data;
@@ -54,27 +68,13 @@ class App extends Component {
       })
   };
 
-
-
-  completeTask = id => {
-    const updatedTask = {
-      text: '',
-      date: ''
-    };
-    axios.put("https://y65zlhzmkj.execute-api.eu-west-1.amazonaws.com/dev/tasks/" + id, updatedTask)
+  completeTask(id) {
+    axios.put("https://y65zlhzmkj.execute-api.eu-west-1.amazonaws.com/dev/tasks/" + id)
       .then((response) => {
-        const updatedTasks = this.state.tasks.map(task => {
-          if (task.taskId === id) {
-            task.completed = true;
-          }
-          return task;
-        });
-        this.setState({
-          tasks: updatedTasks
-        });
+        this.fetchTasks();
       })
       .catch((err) => {
-        console.log("Error deleting task", err);
+        console.log("Error completing task", err);
       })
   };
 
@@ -91,7 +91,6 @@ class App extends Component {
       .catch((err) => {
         console.log("Error deleting task", err);
       })
-
   }
 
   render() {
@@ -117,12 +116,12 @@ class App extends Component {
             </tr>
             {incompleteTasks.map(task => {
               return <TaskList
-                text={task.text}
+                text={task.taskText}
                 completed={task.completed}
                 key={task.taskId}
                 deleteTaskFunc={this.deleteTask}
                 id={task.taskId}
-                completeTaskFunc={this.completeTask}
+                completeTaskFunc={this.completeTask.bind(this)}
                 date={task.dateCreated}
                 dueBy={task.dateDue} />
             })}
@@ -131,13 +130,13 @@ class App extends Component {
         <SubHeader title="Completed Tasks" />
         {completedTasks.map(task => {
           return <CompleteTask
-            text={task.text}
+            text={task.taskText}
             completed={task.completed}
             key={task.taskId}
             deleteTaskFunc={this.deleteTask}
             id={task.taskId}
             date={task.dateCreated}
-            dueBy={task.dateDue} />
+            dueDue={task.dateDue} />
         })}
       </div>
     );

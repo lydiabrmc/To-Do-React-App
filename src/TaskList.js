@@ -1,7 +1,6 @@
 import React from "react"
 import moment from "moment"
 import "./App.css"
-
 class Item extends React.Component {
   handleDelete = () => {
     this.props.deleteTaskFunc(this.props.id);
@@ -11,7 +10,6 @@ class Item extends React.Component {
   }
   render() {
     return (
-
       <tr>
         <td>{this.props.text}</td>
         <td>{moment(this.props.date, "YYYY-MM-DD").format("ddd Do MMM")}</td>
